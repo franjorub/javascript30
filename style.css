@@ -1,0 +1,40 @@
+.title {
+    background: black;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    perspective: 500px;
+}
+
+.title h1 {
+    font-family: againtsregular;
+    color: white;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transform: rotateZ(-5deg) rotateY(-10deg) translateZ(5px);
+}
+
+.title h1::after {
+    content: "30";
+    color: #FFC600;
+    font-size: 4rem;
+}
+
+@font-face {
+    font-family: againtsregular;
+    src: url(fonts/againts.otf);
+}
+
+.curses {
+    background: rgb(235, 235, 235);
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+a {
+    text-decoration: underline;
+    color: black;
+}
