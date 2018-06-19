@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<!-- url(http://i.imgur.com/b9r5sEL.jpg) -->
+
+<body>
+
+    <!-- drump -->
+    <div class="keys">
+        <div class="key" data-key="65">A<span>Boom</span></div>
+        <div class="key" data-key="83">S<span>Clap</span></div>
+        <div class="key" data-key="68">D<span>Hihat</span></div>
+        <div class="key" data-key="70">F<span>Kick</span></div>
+        <div class="key" data-key="71">G<span>Openhat</span></div>
+        <div class="key" data-key="72">H<span>Ride</span></div>
+        <div class="key" data-key="74">J<span>Snare</span></div>
+        <div class="key" data-key="75">K<span>Tink</span></div>
+        <div class="key" data-key="76">L<span>Tom</span></div>
+    </div>
+
+    <!-- audios -->
+    <audio controls data-key="65" src="sounds/boom.wav"></audio>
+    <audio controls data-key="83" src="sounds/clap.wav"></audio>
+    <audio controls data-key="68" src="sounds/hihat.wav"></audio>
+    <audio controls data-key="70" src="sounds/kick.wav"></audio>
+    <audio controls data-key="71" src="sounds/openhat.wav"></audio>
+    <audio controls data-key="72" src="sounds/ride.wav"></audio>
+    <audio controls data-key="74" src="sounds/snare.wav"></audio>
+    <audio controls data-key="75" src="sounds/tink.wav"></audio>
+    <audio controls data-key="76" src="sounds/tom.wav"></audio>
+
+    <!-- scripts -->
+    <script>
+        window.addEventListener('keydown', (event) => {
+
+            playSound(event)
+        })
+
+        let playSound = (event) => {
+
+            let ele = document.querySelector(`div[data-key="${event.keyCode}"]`)
+            let audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
+            audio.currentTime = 0
+            audio.play()
+            addAnimation(ele)
+        }
+
+        function removeTransition(event) {
+            event.target.classList.remove("play")
+        }
+
+        let addAnimation = (element) => {
+            element.classList.add("play")
+        }
+
+        const keys = Array.from(document.querySelectorAll('.key'));
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    </script>
+
+
+</body>
+
+</html>
