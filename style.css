@@ -1,14 +1,21 @@
+a {
+    text-decoration: underline;
+    color: black;
+}
+
 .title {
     background: black;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     perspective: 500px;
+    color: white;
 }
 
 .title h1 {
     font-family: againtsregular;
-    color: white;
     font-size: 3rem;
     font-weight: 500;
     letter-spacing: 2px;
@@ -32,9 +39,4 @@
     display: flex;
     justify-content: space-around;
     margin: 10px;
-}
-
-a {
-    text-decoration: underline;
-    color: black;
 }
